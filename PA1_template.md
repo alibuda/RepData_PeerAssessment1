@@ -36,7 +36,7 @@ hist(hist.data1,ylab = "Total number of steps taken",xlab = "Date",breaks = date
 meanstep.per.day <- mean(totstep.per.day,na.rm = T )
 medianstep.per.day <- median(totstep.per.day,na.rm = T)
 ```
-So,the mean is 9354.2295082, median is 10395.
+So,the mean is **9354.2295** , median is **10395** .
 
 ## What is the average daily activity pattern?
 
@@ -54,7 +54,7 @@ plot(x = names(avg.step.inv),y = avg.step.inv,type = "l",xlab = "the 5-minute in
 ```r
 max.inv <- names(avg.step.inv)[which.max(avg.step.inv)]
 ```
-The 5-minute interval contains the maximum number of steps, on average across all the days in the dataset, is 835.
+The 5-minute interval contains the maximum number of steps, on average across all the days in the dataset, is **835** .
 
 ## Imputing missing values
 * Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
@@ -113,10 +113,10 @@ hist(hist.data2,ylab = "Total number of steps taken",xlab = "Date",breaks = date
 ![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
 
 ```r
-meanstep.per.day.n <- mean(totstep.per.day.n,na.rm = T )
-medianstep.per.day.n <- median(totstep.per.day.n,na.rm = T)
+meanstep.per.day.n <- round(mean(totstep.per.day.n,na.rm = T ),4)
+medianstep.per.day.n <- round(median(totstep.per.day.n,na.rm = T),4)
 ```
-The mean is 1.0766189\times 10^{4}, median is 1.0766189\times 10^{4}.
+The mean is **1.0766** , median is **1.0766** .
 Both the two values are increase, and furthermore, the two valuse are equal.
 
 ## Are there differences in activity patterns between weekdays and weekends?
