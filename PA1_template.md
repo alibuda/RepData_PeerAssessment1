@@ -15,7 +15,7 @@ activity <- read.csv("~/activity.csv")
 totstep.per.day <- tapply(activity$steps,activity$date,sum,na.rm = T)
 ```
 
-* Make a histogram of the total number of steps taken each day
+* Make a histogram of the total number of steps taken per day
 
 ```r
 hist.data1 <- c()
@@ -33,10 +33,14 @@ hist(hist.data1,ylab = "Total number of steps taken",xlab = "Date",breaks = date
 * Calculate and report the mean and median of the total number of steps taken per day
 
 ```r
-meanstep.per.day <- mean(totstep.per.day,na.rm = T )
-medianstep.per.day <- median(totstep.per.day,na.rm = T)
+summary(totstep.per.day)
 ```
-So,the mean is **9354.2295** , median is **10395** .
+
+```
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##       0    6778   10400    9354   12810   21190
+```
+So,the mean is **9354** , median is **10400** .
 
 ## What is the average daily activity pattern?
 
@@ -53,6 +57,11 @@ plot(x = names(avg.step.inv),y = avg.step.inv,type = "l",xlab = "the 5-minute in
 
 ```r
 max.inv <- names(avg.step.inv)[which.max(avg.step.inv)]
+max.inv
+```
+
+```
+## [1] "835"
 ```
 The 5-minute interval contains the maximum number of steps, on average across all the days in the dataset, is **835** .
 
